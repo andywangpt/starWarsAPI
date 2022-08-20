@@ -3,23 +3,27 @@ import axios from 'axios'
 
 const SearchBar = ( {searchValue, setSearchValue, setCurrentUrl} ) => {
 
-    const shouldDisplayClearButton = searchValue.length > 0
+   
+    const [userInput, setUserInput] = useState('')
+    const shouldDisplayClearButton = userInput.length > 0
+
     const handleInputChange = (e) => {
-        setSearchValue(e.target.value)
+        setUserInput(e.target.value)
+        //setSearchValue(e.target.value)
     }
-    
+
     function searchButton () {
-        setSearchValue(searchValue)
+        setSearchValue(userInput)
     }
 
     const clearSearch = () => {
-        setSearchValue('')
+        setUserInput('')
         setCurrentUrl('https://swapi.dev/api/people/?page=1')
     }
 
     return (
         <>
-            <input type='text' value={searchValue} onChange={handleInputChange} placeholder='Search by Name'/>
+            <input type='text' value={userInput} onChange={handleInputChange} placeholder='Search by Name'/>
             {shouldDisplayClearButton && <button onClick={clearSearch}>X</button>}
             <button onClick={searchButton}>Search</button>        
         </>
