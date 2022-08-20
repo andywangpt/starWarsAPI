@@ -4,7 +4,7 @@ A Star Wars API application written in React and styled with Bootstrap.
 
 Try it out <a href=https://afternoon-sea-24753.herokuapp.com>here</a>.
 
-<img width="1254" alt="SWAPI screen shot" src="screenShot.png">
+<img width="1254" alt="SWAPI screen shot" src="public/screenShot.png">
 
 
 <b>Summary</b>
