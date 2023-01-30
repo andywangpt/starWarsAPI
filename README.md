@@ -2,7 +2,7 @@ Star Wars API Application (React)
 
 A Star Wars API application written in React and styled with Bootstrap.
 
-Try it out <a href=https://afternoon-sea-24753.herokuapp.com>here</a>.
+Try it out <a href=https://star-wars-characters-api.netlify.app>here</a>.
 
 <img width="1254" alt="SWAPI screen shot" src="public/screenShot.png">
 
