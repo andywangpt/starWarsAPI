@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import Header from './Components/Header'
 import DisplayTable from './Components/DisplayTable'
 import SearchBar from './Components/SearchBar';
 import axios from 'axios'
@@ -49,7 +50,8 @@ function App() {
 }, [searchValue])
 
   return (
-    <>
+     <>
+      <Header />
       <SearchBar 
         searchValue ={searchValue} setSearchValue={setSearchValue}
         setCurrentUrl={setCurrentUrl} />
