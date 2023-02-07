@@ -1,10 +1,9 @@
-import React, {useEffect} from 'react';
-import axios from 'axios'
+import React from 'react';
 
 export default function DisplayTable( {data, pageNumber, setPageNumber, nextUrl, prevUrl, setCurrentUrl} ) {
 
     if(data.length === 0) {
-        return <p>Data is loading</p>
+        return <h3 class="d-flex flex-column align-items-center">Data is loading...</h3>
     }
     const shouldDisplayPrevPageButton = pageNumber > 1
     const shouldDisplayNextPageButton = data.length >= 10
@@ -45,28 +44,35 @@ export default function DisplayTable( {data, pageNumber, setPageNumber, nextUrl,
     }
 
     return (
-        <>
-            <table className="table">  
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Height</th>
-                        <th scope='col'>Mass</th>
-                        <th scope='col'>Birth Year</th>
-                        <th scope='col'>Planet</th>
-                        <th scope='col'>Species</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {displayTableData()}
-                </tbody>
-            </table>
-            <div className='page-navigation'>
-                {shouldDisplayPrevPageButton && <button onClick={previousPage}>Previous Page</button>}
-                <p className='page-number'>Page {pageNumber}</p>
-                {shouldDisplayNextPageButton && <button onClick={nextPage}>Next Page</button>}
-            </div>
-        </>
-    )
+			<>
+				<table className="table m-2">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Name</th>
+							<th scope="col">Height</th>
+							<th scope="col">Mass</th>
+							<th scope="col">Birth Year</th>
+							<th scope="col">Planet</th>
+							<th scope="col">Species</th>
+						</tr>
+					</thead>
+					<tbody>{displayTableData()}</tbody>
+				</table>
+
+				<div class="page-navigation d-flex justify-content-center m-1 p-1">
+					{shouldDisplayPrevPageButton && (
+						<button class="btn btn-dark" onClick={previousPage}>
+							Previous Page
+						</button>
+					)}
+					<h5 class="page-number m-2">Page {pageNumber}</h5>
+					{shouldDisplayNextPageButton && (
+						<button type="button" class="btn btn-dark" onClick={nextPage}>
+							Next Page
+						</button>
+					)}
+				</div>
+			</>
+		);
 }

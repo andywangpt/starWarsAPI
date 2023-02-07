@@ -50,19 +50,27 @@ function App() {
 }, [searchValue])
 
   return (
-     <>
-      <Header />
-      <SearchBar 
-        searchValue ={searchValue} setSearchValue={setSearchValue}
-        setCurrentUrl={setCurrentUrl} />
-      <DisplayTable 
-        data ={data}
-        pageNumber={pageNumber} setPageNumber={setPageNumber}
-        nextUrl={nextUrl}
-        prevUrl={prevUrl}
-        setCurrentUrl={setCurrentUrl} />
-    </>
-  )
+		<>
+			<link
+				rel="stylesheet"
+				href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+			></link>
+			<Header />
+			<SearchBar
+				searchValue={searchValue}
+				setSearchValue={setSearchValue}
+				setCurrentUrl={setCurrentUrl}
+			/>
+			<DisplayTable
+				data={data}
+				pageNumber={pageNumber}
+				setPageNumber={setPageNumber}
+				nextUrl={nextUrl}
+				prevUrl={prevUrl}
+				setCurrentUrl={setCurrentUrl}
+			/>
+		</>
+	);
 }
 
 export default App;

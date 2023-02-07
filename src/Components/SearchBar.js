@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import "./SearchBar.css"
 
 const SearchBar = ( {searchValue, setSearchValue, setCurrentUrl} ) => {
 
@@ -22,12 +23,31 @@ const SearchBar = ( {searchValue, setSearchValue, setCurrentUrl} ) => {
     }
 
     return (
-        <>
-            <input type='text' value={userInput} onChange={handleInputChange} placeholder='Search by Name'/>
-            {shouldDisplayClearButton && <button onClick={clearSearch}>X</button>}
-            <button onClick={searchButton}>Search</button>        
-        </>
-    )
+			<>
+				<div
+					id="searchBar"
+					class="container d-flex justify-content-center m-auto p-2"
+				>
+					<div class="">
+						<input
+							type="text"
+							class=""
+							value={userInput}
+							onChange={handleInputChange}
+							placeholder="Search by Name"
+						/>
+
+						{shouldDisplayClearButton && (
+							<button onClick={clearSearch}>X</button>
+						)}
+
+						<button onClick={searchButton} type="button" class="btn btn-dark">
+							<span class="glyphicon glyphicon-search"></span> Search
+						</button>
+					</div>
+				</div>
+			</>
+		);
 }
 
 export default SearchBar
