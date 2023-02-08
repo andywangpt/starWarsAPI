@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
-import "./SearchBar.css"
+import React, {useState} from 'react'
+
 
 const SearchBar = ( {searchValue, setSearchValue, setCurrentUrl} ) => {
 
@@ -41,7 +40,7 @@ const SearchBar = ( {searchValue, setSearchValue, setCurrentUrl} ) => {
 							<button onClick={clearSearch}>X</button>
 						)}
 
-						<button onClick={searchButton} type="button" class="btn btn-dark">
+						<button onClick={searchButton} type="button" class="btn btn-small btn-dark">
 							<span class="glyphicon glyphicon-search"></span> Search
 						</button>
 					</div>
